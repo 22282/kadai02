@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>今日のわたし</title>
+    <link rel="stylesheet" href="sample.css">
+</head>
+
+<body>
+    <h1>It's me today.</h1>
+    <form name="health" method="get">
+        <h2>からだのちょうし</h2>
+        <table>
+            <tr>
+                <td class="form-title">元気</td>
+                <td class="form-parts"><select name="body-fine">
+                    <option value="0">0%</option>
+                    <option value="+1">25%</option>
+                    <option value="+2">50%</option>
+                    <option value="+3">75%</option>
+                    <option value="+4">100%</option>
+                </select></td>
+            </tr>
+
+            <tr>
+                <td class="form-title">まあまあ</td>
+                <td class="form-parts"><select name="body-good">
+                    <option value="0">0%</option>
+                    <option value="+1">25%</option>
+                    <option value="+2">50%</option>
+                    <option value="+3">75%</option>
+                    <option value="+4">100%</option>
+                </select></td>
+            </tr>
+
+            <tr>
+                <td class="form-title">疲れている</td>
+                <td class="form-parts"><select name="body-tired">
+                    <option value="0">0%</option>
+                    <option value="-2">25%</option>
+                    <option value="-4">50%</option>
+                    <option value="-6">75%</option>
+                    <option value="-8">100%</option>
+                </select></td>
+            </tr>
+
+            <tr>
+                <td class="form-title">頭が痛い</td>
+                <td class="form-parts"><select name="body-headache">
+                    <option value="0">0%</option>
+                    <option value="-2">25%</option>
+                    <option value="-4">50%</option>
+                    <option value="-6">75%</option>
+                    <option value="-8">100%</option>
+                    </select></td>
+            </tr>
+
+            <tr>
+                <td class="form-title">おなかが痛い</td>
+                <td class="form-parts"><select name="body-stomachache">
+                    <option value="0">0%</option>
+                    <option value="-2">25%</option>
+                    <option value="-4">50%</option>
+                    <option value="-6">75%</option>
+                    <option value="-8">100%</option>
+                </select></td>
+            </tr>
+
+            <tr>
+                <td class="form-title">からだが痛い</td>
+                <td class="form-parts"><select name="body-bodyhurts">
+                    <option value="0">0%</option>
+                    <option value="-2">25%</option>
+                    <option value="-4">50%</option>
+                    <option value="-6">75%</option>
+                    <option value="-8">100%</option>
+                </select></td>
+            </tr>
+        </table>
+
+        <h2>こころのちょうし</h2>
+        <table>
+            <tr>
+                <td class="form-title2">楽しい</td>
+                <td class="form-parts2"><select name="heart-enjoy">
+                    <option value="0">0%</option>
+                    <option value="+1">25%</option>
+                    <option value="+2">50%</option>
+                    <option value="+3">75%</option>
+                    <option value="+4">100%</option>
+                </select></td>
+            </tr>
+
+            <tr>
+                <td class="form-title2">元気</td>
+                <td class="form-parts2"><select name="heart-fine">
+                    <option value="0">0%</option>
+                    <option value="+1">25%</option>
+                    <option value="+2">50%</option>
+                    <option value="+3">75%</option>
+                    <option value="+4">100%</option>
+                </select></td>
+            </tr>
+
+            <tr>
+                <td class="form-title2">まあまあ</td>
+                <td class="form-parts2"><select name="heart-good">
+                    <option value="0">0%</option>
+                    <option value="+1">25%</option>
+                    <option value="+2">50%</option>
+                    <option value="+3">75%</option>
+                    <option value="+4">100%</option>
+                </select></td>
+            </tr>
+
+            <tr>
+                <td class="form-title2">何も感じない</td>
+                <td class="form-parts2"><select name="heart-feelingnothing">
+                    <option value="0">0%</option>
+                    <option value="-4">25%</option>
+                    <option value="-8">50%</option>
+                    <option value="-10">75%</option>
+                    <option value="-12">100%</option>
+                </select></td>
+            </tr>
+
+            <tr>
+                <td class="form-title2">いらいら</td>
+                <td class="form-parts2"><select name="heart-angry">
+                    <option value="0">0%</option>
+                    <option value="-2">25%</option>
+                    <option value="-4">50%</option>
+                    <option value="-6">75%</option>
+                    <option value="-8">100%</option>
+                </select></td>
+            </tr>
+
+            <tr>
+                <td class="form-title2">かなしい</td>
+                <td class="form-parts2"><select name="heart-sad">
+                    <option value="0">0%</option>
+                    <option value="-2">25%</option>
+                    <option value="-4">50%</option>
+                    <option value="-6">75%</option>
+                    <option value="-8">100%</option>
+                </select></td>
+            </tr>
+        </table>
+
+        <input type="button" value="送信" onclick="displayMessage()">
+    </form>
+
+    <div id="messageArea">message</div> <!-- メッセージを表示する領域 -->
+
+    <script>
+        function displayMessage() {
+            var frm = document.forms["health"];
+
+            let totalScore = parseInt(frm["body-fine"].value) +
+                parseInt(frm["body-good"].value) +
+                parseInt(frm["body-tired"].value) +
+                parseInt(frm["body-headache"].value) +
+                parseInt(frm["body-stomachache"].value) +
+                parseInt(frm["body-bodyhurts"].value) +
+                parseInt(frm["heart-enjoy"].value) +
+                parseInt(frm["heart-fine"].value) +
+                parseInt(frm["heart-good"].value) +
+                parseInt(frm["heart-feelingnothing"].value) +
+                parseInt(frm["heart-angry"].value) +
+                parseInt(frm["heart-sad"].value);
+
+            let message = "";
+            if (totalScore <= -10) message = "かなり体調が悪いみたい、無理してるよ、病院へ行こう";
+            else if (totalScore <= -4) message = "体調悪いんだね、今日はお休みした方がいいよ";
+            else if (totalScore <= -1) message = "大丈夫？今日は無理しないで";
+            else if (totalScore <= 3) message = "今日はどんなことが起こるだろう、わくわくするね";
+            else message = "今日は最高！楽しく過ごそう！";
+
+            document.getElementById("messageArea").innerText = message;
+        }
+    </script>
+</body>
+</html>

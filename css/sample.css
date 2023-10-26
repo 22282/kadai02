@@ -1,0 +1,27 @@
+.container {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    padding: 50px;
+}
+
+.buttons {
+    margin: 20px 0;
+}
+
+button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+#result {
+    margin-top: 30px;
+    font-size: 18px;
+}
